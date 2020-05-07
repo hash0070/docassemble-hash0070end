@@ -1,0 +1,52 @@
+---
+mandatory: True
+question:  Summary
+subquestion: |
+  #### You have successfully completed the 'Ensuring Equality: Discrimination Reporting Form'.
+  
+  Your repsonses have been recorded and will be stored according to the Equality Lawyers' private policy and the Privacy Act (Cth).
+  
+  The following table displays all infomation collected:
+  
+  ${ EQcolumn_header }
+  ${ EQdashes }
+  %for EQitem in EQtable_rows:
+  ${ EQitem }
+  %endfor
+  
+  #### Your responses are available to view or download as a PDF
+attachment:
+  docx template file: (to be added)
+  valid formats:
+    - pdf
+
+  %if 'sendtonatalie' == 'yes'
+   Your responses have been emailed to Natalaie Wade who will contact you within X amount of time regarding this issue.
+
+buttons:
+  Exit: exit
+  https://equalitylawyers.com.au
+  Next: continue
+---
+Question: Outcome
+subquestion: |
+  #### What is your desired outcome moving forward?
+fields:
+  - no label: EQoutcome
+    datatype: checkboxes
+    choices:
+      - I would like compensation
+      - I would like to see policy change
+      - I would like an apology
+      - I am not sure 
+
+  #### Would you like this form to be emailed directly to Natalie Wade (Founder and Principle Lawyer of Equality Lawyers)?*
+fields:
+  - no label: sendtonatalie
+    datatype: yesnoradio
+    
+  *If yes, Natalie will receive a summary of your responses and will contact you regarding this matter within X amount of time.
+buttons:
+  Back: back
+  Next: continue
+---
